@@ -1,0 +1,531 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Pro",
+				"ProductForm"
+			],
+			[
+				"c",
+				"context"
+			],
+			[
+				"pr",
+				"product_detail_view"
+			],
+			[
+				"Ba",
+				"BASE_DIR"
+			],
+			[
+				"B",
+				"BASE_DIR"
+			],
+			[
+				"tr",
+				"trydjango"
+			],
+			[
+				"reu",
+				"request"
+			],
+			[
+				"con",
+				"contact_view"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"he",
+				"pixel_hex"
+			],
+			[
+				"py",
+				"pyperclip"
+			],
+			[
+				"pixel",
+				"pixel_hex"
+			],
+			[
+				"button",
+				"button_click"
+			],
+			[
+				"but",
+				"button_add"
+			],
+			[
+				"op",
+				"op_pressed"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"equal",
+				"equals_pressed"
+			],
+			[
+				"eua",
+				"equals_pressed"
+			],
+			[
+				"end",
+				"END"
+			],
+			[
+				"cloumn",
+				"columnspan"
+			],
+			[
+				"row",
+				"rowspan"
+			],
+			[
+				"butt",
+				"button_add"
+			],
+			[
+				"pad",
+				"pady"
+			],
+			[
+				"def",
+				"def\tFunction"
+			],
+			[
+				"pa",
+				"pady"
+			],
+			[
+				"dec",
+				"Deck"
+			],
+			[
+				"Dec",
+				"deck_of_cards"
+			],
+			[
+				"C",
+				"Card"
+			],
+			[
+				"rank",
+				"ranks"
+			],
+			[
+				"suit",
+				"suit_symbols"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "settings.py",
+			"settings":
+			{
+				"buffer_size": 3275,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/Documents/Joseph/dev/e-commerce/src/pages/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 11099,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/Documents/Joseph/dev/e-commerce/src/pages/views.py",
+			"settings":
+			{
+				"buffer_size": 128,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "urls.py",
+			"settings":
+			{
+				"buffer_size": 810,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Documents/Joseph/dev/e-commerce",
+		"/E/Documents/Joseph/dev/e-commerce/src",
+		"/E/Documents/Joseph/dev/e-commerce/src/pages"
+	],
+	"file_history":
+	[
+		"/E/Documents/Joseph/dev/trydjango/src/trydjango/settings.py",
+		"/E/Documents/Joseph/dev/trydjango/src/trydjango/urls.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/models.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/templates/products/product_create.html",
+		"/E/Documents/Joseph/dev/trydjango/src/products/views.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/templates/products/product_detail.html",
+		"/E/Documents/Joseph/dev/trydjango/src/pages/views.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/forms.py",
+		"/E/Documents/Joseph/dev/e-commerce/src/ecommerce/settings.py",
+		"/E/Documents/Joseph/dev/trydjango/src/templates/product/detail.html",
+		"/E/Documents/Joseph/dev/trydjango/src/templates/contacts.html",
+		"/E/Documents/Joseph/dev/trydjango/src/templates/navbar.html",
+		"/E/Documents/Joseph/dev/trydjango/src/templates/base.html",
+		"/E/Documents/Joseph/dev/trydjango/src/templates/home.html",
+		"/E/Documents/Joseph/dev/trydjango/src/products/admin.py",
+		"/E/Documents/Joseph/dev/trydjango/src/manage.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/migrations/0001_initial.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/migrations/0002_auto_20211029_1535.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/migrations/0003_product_feature.py",
+		"/E/Documents/Joseph/dev/trydjango/src/products/migrations/0004_auto_20211029_1716.py",
+		"/E/Documents/Joseph/Django/django_test/mytestsite/manage.py",
+		"/E/Documents/Joseph/Django/locallibrary/manage.py",
+		"/E/Documents/Joseph/Django/locallibrary/locallibrary/settings.py",
+		"/E/Documents/Joseph/Django/locallibrary/locallibrary/urls.py",
+		"/C/Users/Ronnie/PycharmProjects/PracticeProject/venv/Lib/site-packages/numpy/distutils/mingw32ccompiler.py",
+		"/E/Documents/Joseph/Save_Reminder.py",
+		"/E/Documents/Joseph/DSA/Tutorials/Tutorial2-Q2.py",
+		"/E/Documents/Joseph/DSA/Tutorials/Tutorial2-Q1.py",
+		"/E/Documents/Joseph/rando.py",
+		"/E/Documents/Joseph/DSA/Tut2.py",
+		"/E/Documents/Joseph/DSA/Tutorial2.py",
+		"/E/Documents/Joseph/DSA/lab_assignment_1.py",
+		"/E/Documents/Joseph/HTML/Tutorial.html",
+		"/D/Users/Ronnie/Desktop/gltc2.txt",
+		"/C/Users/Ronnie/Desktop/colorpicker.py",
+		"/C/Users/Ronnie/Desktop/Selenium Webdriver/SeleniumTutorial1.py",
+		"/D/Users/Ronnie/Downloads/Resynthesizer_v1.0-i686/Resynthesizer_v1.0-i686/plugin-resynth-enlarge.py",
+		"/C/Users/Ronnie/Desktop/calculator.py",
+		"/D/Users/Ronnie/Downloads/Resynthesizer_v1.0-i686/Resynthesizer_v1.0-i686/plugin-heal-selection.py",
+		"/C/Users/Ronnie/anaconda3/pkgs/scikit-learn-0.23.2-py38h47e9c7a_0/Lib/site-packages/sklearn/inspection/_permutation_importance.py",
+		"/C/Users/Ronnie/AppData/Local/Temp/02f0ec22c1c588d4f81b07971b2bed7b/Library/PackageCache/com.unity.package-manager-ui@2.0.8/Editor/AssemblyInfo.cs",
+		"/E/Documents/Joseph/piano_tiles_bot.py",
+		"/E/Documents/Joseph/Class ppts/CS/UNIT-4/UNIT-4-CODES/sqf.py.html",
+		"/C/Users/Ronnie/Desktop/Complete-Python-3-Bootcamp-master/Joseph/BlackJack/deck_of_cards.py",
+		"/C/Users/Ronnie/Desktop/Complete-Python-3-Bootcamp-master/Joseph/BlackJack/hand.py",
+		"/C/Users/Ronnie/Desktop/Complete-Python-3-Bootcamp-master/Joseph/BlackJack/dealer.py",
+		"/C/Users/Ronnie/Desktop/Complete-Python-3-Bootcamp-master/Joseph/cards.py",
+		"/C/Users/Ronnie/Desktop/Joseph/cards.py",
+		"/C/Users/Ronnie/Desktop/Joseph/cap.py",
+		"/C/Users/Ronnie/Desktop/Joseph/test_cap.py",
+		"/C/Users/Ronnie/Desktop/Joseph/Simple1.py",
+		"/C/Users/Ronnie/Desktop/Joseph/one.py",
+		"/C/Users/Ronnie/Desktop/Joseph/two.py",
+		"/C/Users/Ronnie/Desktop/Joseph/mymodule.py",
+		"/C/Users/Ronnie/Desktop/Joseph/MyMainPackage/some_main_script.py",
+		"/C/Users/Ronnie/Desktop/Joseph/MyMainPackage/SubPackage/mysubscript.py",
+		"/C/Users/Ronnie/Desktop/Joseph/myprogram.py",
+		"/C/Users/Ronnie/Desktop/Joseph/MyMainPackage/SubPackage/__init__.py",
+		"/C/Users/Ronnie/Desktop/Joseph/MyMainPackage/__init__.py",
+		"/D/Users/Ronnie/Desktop/sarah knows how to code.html",
+		"/D/Users/Ronnie/Desktop/helloworld.py",
+		"/D/Users/Ronnie/Desktop/myexample.py",
+		"/D/Users/Ronnie/Desktop/myexample"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"src",
+			"Entry",
+			"init",
+			"int(",
+			"int",
+			"NORMAL",
+			"ENABLED",
+			"op_",
+			"num1",
+			"40",
+			"button_click",
+			"pady=1",
+			"button_add",
+			"padx=10, pady=10",
+			"20",
+			"40",
+			" =",
+			"clear",
+			"clear_output()",
+			"clear_"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1095,
+								1095
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 828.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/Documents/Joseph/dev/e-commerce/src/pages/templates/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11099,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								888,
+								888
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/E/Documents/Joseph/dev/e-commerce/src/pages/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5,
+								5
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								793,
+								793
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ecommerce.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
