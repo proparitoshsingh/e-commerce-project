@@ -18,9 +18,6 @@ from django.urls import path
 
 from pages.views import home_view, products_view, about_view, contacts_view, reg_view
 
-from django.views.static import server
-from django.conf.urls import url
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
@@ -28,7 +25,3 @@ urlpatterns = [
     path('registration/', reg_view),
     path('about/', about_view),
     path('contacts/', contacts_view),
-
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-]
