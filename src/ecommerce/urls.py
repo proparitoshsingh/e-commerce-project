@@ -25,3 +25,4 @@ urlpatterns = [
     path('registration/', reg_view),
     path('about/', about_view),
     path('contacts/', contacts_view),
+   ]
