@@ -1,1 +1,1 @@
-web: gunicorn e-commerce-project.wsgi
+web: gunicorn src.wsgi
