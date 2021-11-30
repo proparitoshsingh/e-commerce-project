@@ -1,17 +1,16 @@
 from django.shortcuts import render
 
+navbar_context = {"uname":"Login/Sign Up"}
+
 # Create your views here.
 def home_view(request):
-	return render(request, "index.html", {})
+	return render(request, "index.html", navbar_context)
 
 def products_view(request):
-	return render(request, "products.html", {})
-
-def reg_view(request):
-	return render(request, "registration.html", {})
+	return render(request, "products.html", navbar_context)
 
 def about_view(request):
-	return render(request, "about.html", {})
+	return render(request, "about.html", navbar_context)
 
 def contacts_view(request):
-	return render(request, "contacts.html", {})
+	return render(request, "contacts.html", navbar_context)

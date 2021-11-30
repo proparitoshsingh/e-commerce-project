@@ -33,21 +33,30 @@
                 {% load static %}
                 <img src="{% static "login-reg-img/tw.png" %}" alt="">
             </div>
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="User ID" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
+            <form id="login" class="input-group" action="login/" method="POST" > {% csrf_token %}
+                {% if uname == "Login/Sign Up" %}
+                <input type="email" class="input-field" placeholder="Email ID" name="email" required>
+                <input type="password" class="input-field" placeholder="Password" name="pass" required>
                 <input type="checkbox" class="check-box"><span>
                     Remember Password
                 </span>
                 <button type="submit" class="submit-btn">Log In</button>
+                {% else %}
+                <p>You are already signed into an account. Please log out to continue</p>
+                {% endif %}
             </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User ID" required>
-                <input type="email" class="input-field" placeholder="Email ID" required>
-                <input type="checkbox" class="check-box"><span>
+            <form id="register" class="input-group" action="signup/" method="POST"> {% csrf_token %}
+                {% if uname == "Login/Sign Up" %}
+                <input type="email" class="input-field" placeholder="Email ID" name="email" required>
+                <input type="password" class="input-field" placeholder="Password" name="pass" required>
+                <input type="password" class="input-field" placeholder="Confirm Password" required>
+                <input type="checkbox" class="check-box" required><span>
                     I agree to the terms & conditions
                 </span>
                 <button type="submit" class="submit-btn">Register</button>
+                {% else %}
+                <p>You are already signed into an account. Please log out to continue</p>
+                {% endif %}
             </form>
         </div>
 
