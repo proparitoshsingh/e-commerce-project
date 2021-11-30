@@ -58,4 +58,4 @@ def logout(request):
     return redirect(auth_view)
 
 def account_view(request):
-    return render(request, 'account.html')
+    return render(request, 'account.html', navbar_context)
