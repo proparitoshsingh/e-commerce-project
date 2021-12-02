@@ -31,9 +31,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1^@*&buse*rc&$ln_-%qv=1(+&_jd-%mz31^_(($&()75a)hde'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['vitstore.herokuapp.com', 'localhost', '127.0.0.1']
+DEBUG = True
+ALLOWED_HOSTS = ['www.vitstore.herokuapp.com', 'localhost', 'http://127.0.0.1:8000/']
 
 # Media files
 MEDIA_URL = '/media/'
