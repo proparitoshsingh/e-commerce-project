@@ -9,7 +9,7 @@ import operator
 def products_view(request):
     page_no = 1
     max_ = 13 * page_no
-    all_products = Product.objects.all()
+    all_products = Product.objects
     page_products = all_products.order_by("id")
 
     if request.method == 'POST':
