@@ -6,9 +6,6 @@ navbar_context = {"uname":"Login/Sign Up"}
 def home_view(request):
 	return render(request, "index.html", navbar_context)
 
-def products_view(request):
-	return render(request, "products.html", navbar_context)
-
 def about_view(request):
 	return render(request, "about.html", navbar_context)
 

@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 {% load static %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 
 
 
@@ -36,156 +36,186 @@
 
         <div class="row row-2">
             <h2>All Products</h2>
-
-            <select>
-                <option>Default Sorting</option>
-                <option>Sort By Price</option>
-                <option>Sort By Rating</option>
-                <option>Sort By Sale</option>
-            </select>
+            <h2 id="test"></h2>
+            <form method="POST" action="." id="sort-form"> {% csrf_token %}
+                
+                <label for="sort_id">Sort By</label>
+                <select id="sort_id" name="sort" onchange="submit_sort(); return false;">
+                    <option name="default" value="default">Default</option>
+                    <option name="price" value="price">Price (Ascending)</option>
+                    <option name="!price" value="!price">Price (Descending)</option>
+                    <option name="alpha" value="alpha">Alphabet (A-Z)</option>
+                    <option name="!aplha" value="!alpha">Alphabet (Z-A)</option>
+                    <option>Sort By Rating</option>
+                </select>
+            </form>
+            
         </div>
         
         <div class="row">
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-1.jpg" %}">
-                <h4>Red Printed T-shirt</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>₹50.00</p>
+                <a href="/product/{{p1.id}}">
+                    {% load static %}
+                    <img src="{% static p1.img %}">
+                    <h4>{{p1.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>${{p1.price}}</p>
+                </a>
             </div>
 
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-2.jpg" %}">
-                <h4>HRX Black Green Shoe</h4>
+                <a href="/product/{{p2.id}}">
+                    {% load static %}
+                <img src="{% static p2.img %}">
+                <h4>{{p2.name}}</h4>
                 <div class="rating">
 
                 </div>
 
-                <p>₹70.00</p>
+                <p>${{p2.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-3.jpg" %}">
-                <h4>Grey Track Pants</h4>
-                <div class="rating">
+                <a href="/product/{{p3.id}}">
+                    {% load static %}
+                    <img src="{% static p3.img %}">
+                    <h4>{{p3.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹40.00</p>
+                    <p>${{p3.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-4.jpg" %}">
-                <h4>Puma Blue T-shirt</h4>
-                <div class="rating">
+                <a href="/product/{{p4.id}}">
+                    {% load static %}
+                    <img src="{% static p4.img %}">
+                    <h4>{{p4.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹50.00</p>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-5.jpg" %}">
-                <h4>Grey Long Sneakers</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>₹70.00</p>
-            </div>
-
-            <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-6.jpg" %}">
-                <h4>Puma Black Triangle T-Shirt</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>₹50.00</p>
-            </div>
-            <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-7.jpg" %}">
-                <h4>HRX Sport Socks</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>₹30.00</p>
-            </div>
-            <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-8.jpg" %}">
-                <h4>Fossil Black Dial Watch</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>₹150.00</p>
+                    <p>${{p4.price}}</p>
+                </a>
             </div>
 
         </div>
 
         <div class="row">
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-9.jpg" %}">
-                <h4>Black Watch</h4>
-                <div class="rating">
+                <a href="/product/{{p5.id}}">
+                    {% load static %}
+                    <img src="{% static p5.img %}">
+                    <h4>{{p5.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹50.00</p>
+                    <p>${{p5.price}}</p>
+                </a>
             </div>
 
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-10.jpg" %}">
-                <h4>Puma Red-Black Shoe</h4>
-                <div class="rating">
+                <a href="/product/{{p6.id}}">
+                    {% load static %}
+                    <img src="{% static p6.img %}">
+                    <h4>{{p6.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹50.00</p>
+                    <p>${{p6.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-11.jpg" %}">
-                <h4>Grey Shoes</h4>
-                <div class="rating">
+                <a href="/product/{{p7.id}}">
+                    {% load static %}
+                    <img src="{% static p7.img %}">
+                    <h4>{{p7.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹50.00</p>
+                    <p>${{p7.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-12.jpg" %}">
-                <h4>Black Nike Track Pants</h4>
-                <div class="rating">
+                <a href="/product/{{p8.id}}">
+                    {% load static %}
+                    <img src="{% static p8.img %}">
+                    <h4>{{p8.name}}</h4>
+                    <div class="rating">
 
-                </div>
+                    </div>
 
-                <p>₹50.00</p>
+                    <p>${{p8.price}}</p>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <a href="/product/{{p9.id}}">
+                    {% load static %}
+                    <img src="{% static p9.img %}">
+                    <h4>{{p9.name}}</h4>
+                    <div class="rating">
+
+                    </div>
+
+                    <p>${{p9.price}}</p>
+                </a>
+            </div>
+
+            <div class="col-4">
+                <a href="/product/{{p10.id}}">
+                    {% load static %}
+                    <img src="{% static p10.img %}">
+                    <h4>{{p10.name}}</h4>
+                    <div class="rating">
+
+                    </div>
+
+                    <p>${{p10.price}}</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/product/{{p11.id}}">
+                    {% load static %}
+                    <img src="{% static p11.img %}">
+                    <h4>{{p11.name}}</h4>
+                    <div class="rating">
+
+                    </div>
+
+                    <p>${{p11.price}}</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/product/{{p12.id}}">
+                    {% load static %}
+                    <img src="{% static p12.img %}">
+                    <h4>{{p12.name}}</h4>
+                    <div class="rating">
+
+                    </div>
+
+                    <p>${p12.price}</p>
+                </a>
             </div>
 
         </div>
 
         <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>&#8594;</span>
+            
         </div>
 
     </div>
@@ -212,7 +242,21 @@
         }
     }
 
-
+    document.addEventListener('DOMContentLoaded', function () {
+       var input = document.getElementById('sort');
+       if (localStorage['sort_id']) { // if sort_id is set
+           input.value = localStorage['sort_id']; // set the value
+       }
+       input.onchange = function () {
+            localStorage['sort_id'] = this.value; // change localStorage on change
+        }
+    }); 
+    
+    function submit_sort()
+    {
+        document.getElementById("sort-form").submit();
+      
+    }
 </script>
 
 </body>

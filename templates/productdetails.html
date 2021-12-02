@@ -7,13 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - E commerce Website</title>
-    <link rel="stylesheet" href="STYLE.CSS">
+    {% load static %}
+    <link rel="stylesheet" href={% static "STYLE.CSS" %}>
 
 </head>
+{% load static %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
+{% load static %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 
 
@@ -22,51 +26,39 @@
 <body>
 
 
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="RedStore_Img/images/logo.png" width="125px">
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contacts</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Account</a></li>
-                </ul>
-
-            </nav>
-            <img src="RedStore_Img/images/cart.png" width="30px" height="30px">
-            <img src="RedStore_Img/images/menu.png" class="menu-icon" onclick="menutoggle()">
-
-        </div>
-
+    <div class='container'>
+        {% include 'navbar.html' %}
     </div>
+    
 
     <!-- --single product details -- -->
 
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="RedStore_Img/images/gallery-1.jpg" width="100%" id="ProductImg">
+                {% load static %}
+                <img src="{% static "RedStore_Img/images/gallery-1.jpg" %}" width="100%" id="ProductImg">
 
 
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="RedStore_Img/images/gallery-1.jpg" width="100%" class="small-img">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/gallery-1.jpg" %}" width="100%" class="small-img">
 
                     </div>
                     <div class="small-img-col">
-                        <img src="RedStore_Img/images/gallery-2.jpg" width="100%" class="small-img">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/gallery-2.jpg" %}" width="100%" class="small-img">
 
                     </div>
                     <div class="small-img-col">
-                        <img src="RedStore_Img/images/gallery-3.jpg" width="100%" class="small-img">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/gallery-3.jpg" %}" width="100%" class="small-img">
 
                     </div>
                     <div class="small-img-col">
-                        <img src="RedStore_Img/images/gallery-4.jpg" width="100%" class="small-img">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/gallery-4.jpg" %}" width="100%" class="small-img">
 
                     </div>
                 </div>
@@ -108,7 +100,8 @@
 
         <div class="row">
             <div class="col-4">
-                <img src="RedStore_Img/images/product-9.jpg">
+                {% load static %}
+                <img src="{% static "RedStore_Img/images/product-9.jpg" %}">
                 <h4>Black Watch</h4>
                 <div class="rating">
 
@@ -118,7 +111,8 @@
             </div>
 
             <div class="col-4">
-                <img src="RedStore_Img/images/product-10.jpg">
+                {% load static %}
+                <img src="{% static "RedStore_Img/images/product-10.jpg" %}">
                 <h4>Puma Red-Black Shoe</h4>
                 <div class="rating">
 
@@ -127,7 +121,8 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="RedStore_Img/images/product-11.jpg">
+                {% load static %}
+                <img src="{% static "RedStore_Img/images/product-11.jpg" %}">
                 <h4>Grey Shoes</h4>
                 <div class="rating">
 
@@ -136,7 +131,8 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="RedStore_Img/images/product-12.jpg">
+                {% load static %}
+                <img src="{% static "RedStore_Img/images/product-12.jpg" %}">
                 <h4>Black Nike Track Pants</h4>
                 <div class="rating">
 
@@ -154,64 +150,10 @@
 
     <!-- --footer-- -->
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3>
-                        Download Our App
-                    </h3>
-                    <p>Download App For Android</p>
-
-                    <div class="app-logo">
-                        <img src="RedStore_Img/images/play-store.png">
-                        <img src="RedStore_Img/images/app-store.png">
-                    </div>
-
-                </div>
-                <div class="footer-col-2">
-                    <img src="RedStore_Img/images/logo-white.png">
-                    <p>Our Purpose is simple and sustainable pleasure benefits to people</p>
-
-                </div>
-
-                <div class="footer-col-3">
-                    <h3>
-                        Useful Links
-                    </h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog Posts</li>
-                        <li>Return Policy</li>
-                        <li>Join AFFliates</li>
-                    </ul>
-
-
-                </div>
-
-                <div class="footer-col-4">
-                    <h3>
-                        Follow US
-                    </h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Youtube</li>
-
-                    </ul>
-
-
-                </div>
-
-            </div>
-            <hr>
-            <p class="copyright">Copyright - &copy;Ecommerce Website</p>
-
-        </div>
-    </div>
+    {% include 'footer.html' %}
 
     <!-- --js for toggle menu-- -->
-
+    {% load static %}
     <script>
         var MenuItems = document.getElementById("MenuItems")
 
@@ -227,7 +169,7 @@
     </script>
 
 <!-- --js for product gallery -- -->
-
+{% load static %}
 <script>
 
 var ProductImg = document.getElementById("ProductImg");

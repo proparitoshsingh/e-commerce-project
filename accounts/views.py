@@ -59,3 +59,6 @@ def logout(request):
 
 def account_view(request):
     return render(request, 'account.html', navbar_context)
+
+def cart_view(request):
+    return render(request, 'cart.html', navbar_context)

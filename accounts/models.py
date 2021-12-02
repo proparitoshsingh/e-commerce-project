@@ -15,8 +15,7 @@ class User(models.Model):
     email = models.EmailField(blank=False)
     password = models.CharField(max_length=128, blank=False, null=False)
     confirmed = models.BooleanField(default=False)
-    cart = Cart()
-    cartJSON = JSONField(Cart.items, default=None)
+    cart = JSONField(Cart.items, default=None)
 
     def __str__(self):
         return self.email
