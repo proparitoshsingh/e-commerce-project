@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta naem="viewport" content="width=device-width, initial-scale = 1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - E commerce Website</title>
@@ -36,9 +35,9 @@
 
         <div class="row row-2">
             <h2>All Products</h2>
-            <form method="POST" action="." id="sort-form"> {% csrf_token %}
+            <form id="sort-form" method="post" action="."> {% csrf_token %}
                 
-                <label for="sort_id">Sort By</label>
+                <label for="sort">Sort By</label>
                 <select id="sort_id" name="sort" onchange="submit_sort(); return false;">
                     <option name="default" value="default">Default</option>
                     <option name="price" value="price">Price (Ascending)</option>
@@ -202,7 +201,7 @@
 
                     </div>
 
-                    <p>${p12.price}</p>
+                    <p>${{ p12.price }}</p>
                 </a>
             </div>
 

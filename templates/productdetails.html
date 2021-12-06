@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-2">
                 {% load static %}
-                <img src="{% static "RedStore_Img/images/gallery-1.jpg" %}" width="100%" id="ProductImg">
+                <img src="{% static p1.img %}" width="100%" id="ProductImg">
 
 
                 <div class="small-img-row">
@@ -64,9 +64,9 @@
                 </div>
             </div>
             <div class="col-2">
-                <p>Home / T-Shirt</p>
-                <h1>Red Printed T-Shirt By HRX</h1>
-                <h4>$50.00</h4>
+                <p>Home / {{p1.name}}</p>
+                <h1>{{p1.name}}</h1>
+                <h4>${{p1.price}}</h4>
                 <select>
                     <option>Select Size</option>
                     <option>XXL</option>
@@ -77,9 +77,9 @@
                 </select>
                 <input type="number" value="1">
                 <a href="" class="btn">Add To Cart</a>
-                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <h3>Product Details<i class="fa fa-indent"></i></h3>
                 <br>
-                <p>Summer is cool</p>
+                <p>{{p1.desc}}</p>
             </div>
         </div>
     </div>
@@ -100,45 +100,45 @@
 
         <div class="row">
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-9.jpg" %}">
-                <h4>Black Watch</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>$50.00</p>
+                <a href="/product/{{p2.id}}">
+                    {% load static %}
+                    <img src="{% static p2.img %}">
+                    <h4>{{p2.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>${{p2.price}}</p>
+                </a>
             </div>
 
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-10.jpg" %}">
-                <h4>Puma Red-Black Shoe</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>$50.00</p>
+                <a href="{{p3.id}}">
+                    {% load static %}
+                    <img src="{% static p3.img %}">
+                    <h4>{{p3.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>${{p3.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-11.jpg" %}">
-                <h4>Grey Shoes</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>$50.00</p>
+                <a href="{{p4.id}}">
+                    {% load static %}
+                    <img src="{% static p4.img %}">
+                    <h4>{{p4.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>${{p4.price}}</p>
+                </a>
             </div>
             <div class="col-4">
-                {% load static %}
-                <img src="{% static "RedStore_Img/images/product-12.jpg" %}">
-                <h4>Black Nike Track Pants</h4>
-                <div class="rating">
-
-                </div>
-
-                <p>$50.00</p>
+                <a href="{{p5.id}}">
+                    {% load static %}
+                    <img src="{% static p5.img %}">
+                    <h4>{{p5.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>${{p5.price}}</p>
+                </a>
             </div>
 
         </div>

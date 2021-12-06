@@ -68,7 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
-
+ 
 accounts_path = os.path.join(BASE_DIR, "accounts")
 
 TEMPLATES = [
