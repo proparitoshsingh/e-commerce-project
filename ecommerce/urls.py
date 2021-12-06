@@ -33,5 +33,5 @@ urlpatterns = [
     path('logout/', logout),
     path('account/', account_view),
     re_path(r'^product/[0-9]', product_details),
-    re_path(r'^cart', cart_view),
+    re_path(r'^cart/', cart_view),
    ]

@@ -32,8 +32,7 @@ SECRET_KEY = '1^@*&buse*rc&$ln_-%qv=1(+&_jd-%mz31^_(($&()75a)hde'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['ecom-site-proj.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['www.vitstore.herokuapp.com', 'localhost', 'http://127.0.0.1:8000/']
 
 # Media files
 MEDIA_URL = '/media/'
@@ -59,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,7 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
-
+ 
 accounts_path = os.path.join(BASE_DIR, "accounts")
 
 TEMPLATES = [

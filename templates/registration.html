@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login And Registration Page</title>
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static "reg.css" %}">
     {% load static %}
     <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "reg.css" %}">
+    
 
-<body>
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+
+<body id="all">
 
     <div class="container">
         {% include 'navbar.html' %}
