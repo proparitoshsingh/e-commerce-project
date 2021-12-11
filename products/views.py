@@ -5,6 +5,7 @@ from pages.views import navbar_context
 from .models import Product
 import operator
 import re
+from accounts.models import User, Cart
 
 # Create your views here.
 def products_view(request):
@@ -44,8 +45,7 @@ def product_details(request):
     no_of_prod = len(Product.objects.all())
     full_path = str(request.get_full_path())
     pid = int(re.search('[0-9]+$', full_path).group(0))
-    print(full_path, type(pid))
-    
+
     products = list(Product.objects.all()[pid-1:pid+4])
     if (pid+4 > no_of_prod):
         excess = pid+4 - no_of_prod
@@ -57,4 +57,17 @@ def product_details(request):
         context["p" + str(i + 1)] = model
     
     context.update(navbar_context)
+
+    if request.method == "POST" and 'user' in list(request.session.keys()):
+        user_email = dict(request.session.items())['user']
+        user_obj = User.objects.filter(email=user_email)[0]
+        
+        if not hasattr(user_obj, 'cart'):
+            Cart.objects.create(user=user_obj)
+        else:
+            user_obj.cart.add_to_cart(Product.objects.filter(id=pid))
+            print(user_obj.cart.cart_field)
+            print(user_obj.cart.cart)
+            user_obj.cart.save()
+
     return render(request, "productdetails.html", context)

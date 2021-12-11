@@ -76,7 +76,9 @@
                     <option>Small</option>
                 </select>
                 <input type="number" value="1">
-                <a href="" class="btn">Add To Cart</a>
+                <form id="add" action="" method="post"> {% csrf_token %}
+                    <a class="btn" onclick="addToCart();">Add To Cart</a>
+                </form> 
                 <h3>Product Details<i class="fa fa-indent"></i></h3>
                 <br>
                 <p>{{p1.desc}}</p>
@@ -165,6 +167,14 @@
             } else {
                 MenuItems.style.maxHeight = "0px";
             }
+        }
+
+        
+
+        function addToCart()
+        {
+            var add = document.getElementById("add")
+            add.submit();
         }
     </script>
 

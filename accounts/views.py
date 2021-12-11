@@ -1,7 +1,7 @@
 import re
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from pages.views import navbar_context, home_view
+from pages.views import navbar_context, home_view, get_session
 
 # Create your views here.
 from .models import User
@@ -53,7 +53,7 @@ def logout(request):
     except:
         return redirect(auth_view)
     
-    navbar_context["uname"] = "Login/Sign Up"
+    navbar_context["uname"] = ""
     
     return redirect(auth_view)
 
@@ -61,4 +61,5 @@ def account_view(request):
     return render(request, 'account.html', navbar_context)
 
 def cart_view(request):
+    context = {}
     return render(request, 'cart.html', navbar_context)

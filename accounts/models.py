@@ -1,14 +1,5 @@
 from django.db import models
 
-class Cart:
-    items = {} # "productID" : Product object
-
-    def add_to_cart(self, pid, obj):
-        self.items[pid] = obj
-
-    def del_from_cart(self, pid):
-        del self.items[pid]
-
 class User(models.Model):
     name = models.CharField(max_length=128, blank=True)
     email = models.EmailField(blank=False)
@@ -17,3 +8,6 @@ class User(models.Model):
 
     def __str__(self):
         return self.email
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)

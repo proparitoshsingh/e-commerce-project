@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
 
-from pages.views import home_view, about_view, contacts_view
+from pages.views import home_view, about_view, contact_view, get_session
 from accounts.views import auth_view, login, signup, logout, account_view, cart_view
 from products.views import products_view, product_details
 
@@ -27,11 +27,12 @@ urlpatterns = [
     path('products/', products_view),
     path('auth/', auth_view),
     path('about/', about_view),
-    path('contacts/', contacts_view),
+    path('contact/', contact_view),
     re_path(r'^auth/signup.', signup),
     re_path(r'^auth/login.', login),
     path('logout/', logout),
     path('account/', account_view),
     re_path(r'^product/[0-9]', product_details),
     re_path(r'^cart/', cart_view),
+    re_path(r'.', get_session),
    ]

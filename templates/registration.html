@@ -43,7 +43,7 @@
                 <img src="{% static "login-reg-img/tw.png" %}" alt="">
             </div>
             <form id="login" class="input-group" action="login/" method="POST" > {% csrf_token %}
-                {% if uname == "Login/Sign Up" %}
+                {% if uname == '' %}
                 <input type="email" class="input-field" placeholder="Email ID" name="email" required>
                 <input type="password" class="input-field" placeholder="Password" name="pass" required>
                 <input type="checkbox" class="check-box"><span>
@@ -55,14 +55,17 @@
                 {% endif %}
             </form>
             <form id="register" class="input-group" action="signup/" method="POST"> {% csrf_token %}
-                {% if uname == "Login/Sign Up" %}
+                {% if uname == '' %}
                 <input type="email" class="input-field" placeholder="Email ID" name="email" required>
-                <input type="password" class="input-field" placeholder="Password" name="pass" required>
-                <input type="password" class="input-field" placeholder="Confirm Password" required>
-                <input type="checkbox" class="check-box" required><span>
-                    I agree to the terms & conditions
-                </span>
-                <button type="submit" class="submit-btn">Register</button>
+                <input id = "pwd" type="password" class="input-field" placeholder="Password" name="pass" required>
+                <input id = "confirm-pwd" type="password" class="input-field" placeholder="Confirm Password" required>
+                <span id = "message" style="color:red"> </span> <br><br>
+                <label for="terms">
+                    <input id="terms" type="checkbox" class="check-box" required><span>
+                        I agree to the terms & conditions
+                    </span>
+                </label>
+                <button type="submit" class="submit-btn" onsubmit="return verifyPassword()">Register</button>
                 {% else %}
                 <p>You are already signed into an account. Please log out to continue</p>
                 {% endif %}
@@ -88,9 +91,34 @@
             x.style.left = "50px";
             y.style.left = "450px";
             z.style.left = "0px";
-        }
+        
+        }  
 
     </script>
+
+    <script>  
+        function verifyPassword() {  
+        var pwd1 = document.getElementById("pwd").value;
+        var pwd2 = document.getElementById("confirm-pwd").value;  
+        //check empty password field  
+        if(pwd1 != pwd2) {  
+            document.getElementById("message").innerHTML = "**Fill the password please!";  
+            return false;  
+        }  
+        
+        //minimum password length validation  
+        if(pwd1.length < 8) {  
+            document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+            return false;  
+        }  
+        
+        //maximum length of password validation  
+        if(pwd1.length > 15) {  
+            document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+            return false;  
+        }  
+        }  
+    </script>  
 
 </body>
 
