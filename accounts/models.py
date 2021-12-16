@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 class User(models.Model):
     name = models.CharField(max_length=128, blank=True)
@@ -11,3 +12,4 @@ class User(models.Model):
 
 class Cart(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
+    cart = models.TextField(default="", blank=True)

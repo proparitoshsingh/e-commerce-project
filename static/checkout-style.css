@@ -148,7 +148,7 @@ tfoot {
 
 .card {
   border-radius: 1em;
-  background-color: #fc8080;
+  background-color: white;
   background-color: var(--color-primary);
   color: #fff;
   padding: 1em;

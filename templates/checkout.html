@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Checkout</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="checkout-style.css" />
+  {% load static %}
+  <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" />
+  {% load static %}
+<link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' %}" rel="stylesheet" />
+{% load static %}
+<link rel="stylesheet" href="{% static 'checkout-style.css' %}" />
 
 </head>
 <body>
@@ -15,16 +18,13 @@
     <h1>Checkout</h1>
   </header>
 
-  <form action="https://httpbin.org/post" class="form" method="POST">
+  <form action="/payment/" class="form" method="POST"> {% csrf_token %}
     <div>
       <h2>Address</h2>
 
-      <div class="card">
-        <address>
-          Adam Johnson<br />
-          403 Oakland Ave Street, A city, Florida, 32104,<br />
-          United States of America
-        </address>
+      <div>
+
+        <input class="card" size="36" name="address" required>
       </div>
     </div>
 
@@ -61,35 +61,39 @@
       <table>
         <tbody>
           <tr>
-            <td>Shipping fee</td>
-            <td align="right">$5.43</td>
-          </tr>
-          <tr>
-            <td>Discount 10%</td>
-            <td align="right">-$1.89</td>
-          </tr>
-          <tr>
             <td>Price Total</td>
-            <td align="right">$84.82</td>
+            <td align="right">${{order_total}}</td>
+          </tr>
+          <tr>
+            <td>Discount {{per.0}}%</td>
+            <td align="right">-${{disc}}</td>
+          </tr>
+          <tr>
+            <td>Tax {{per.1}}%</td>
+            <td align="right">${{tax}}</td>
+          </tr>
+          <tr>
+            <td>Shipping fee</td>
+            <td align="right">${{ship}}</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td>Total</td>
-            <td align="right">$88.36</td>
+            <td align="right">${{total}}</td>
           </tr>
         </tfoot>
       </table>
     </div>
 
     <div>
-      <button class="button button--full" type="submit"><svg class="icon">
-          <use xlink:href="#icon-shopping-bag" />
-        </svg>Buy Now</button>
+        <button class="button button--full" type="submit" name="btn" value={{total}}><svg class="icon">
+            <!--<use xlink:href="#icon-shopping-bag" />-->
+          </svg>Buy Now</button>
     </div>
   </form>
 </div>
-
+{% load static %}
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
 
   <symbol id="icon-shopping-bag" viewBox="0 0 24 24">
@@ -173,6 +177,7 @@
   </symbol>
 </svg>
 <!-- partial -->
+{% load static %}
   <script  src="checkout-script.js"></script>
 
 </body>

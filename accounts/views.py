@@ -1,17 +1,23 @@
 import re
+from django.db.models.query import QuerySet
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from pages.views import navbar_context, home_view, get_session
+from products.models import Product
 
 # Create your views here.
-from .models import User
+from .models import User, Cart
 
 
 def auth_view(request):
+    get_session(request)
+    
     return render(request, 'registration.html', navbar_context)
 
 
 def signup(request):
+    get_session(request)
+    
     if request.method == "POST":
         email = request.POST.get('email')
         pwd = request.POST.get('pass')
@@ -19,7 +25,6 @@ def signup(request):
         if User.objects.filter(email=email).count() > 0:
             return HttpResponse('Username already exists.')
         else:
-            print(email, pwd)
             obj = User.objects.create(email=email, password=pwd)
             obj.save()
             return redirect(auth_view)
@@ -28,12 +33,14 @@ def signup(request):
 
 
 def login(request):
+    get_session(request)
+    
     if request.method == 'POST':
         email = request.POST.get('email')
         pwd = request.POST.get('pass')
 
         check_user = User.objects.filter(email=email, password=pwd)
-        print(request, check_user, email, pwd)
+        
         if check_user:
             request.session['user'] = email
             if request.POST.get('name'):
@@ -48,6 +55,8 @@ def login(request):
     return render(request, 'registration.html')
 
 def logout(request):
+    get_session(request)
+    
     try:
         del request.session['user']
     except:
@@ -58,8 +67,41 @@ def logout(request):
     return redirect(auth_view)
 
 def account_view(request):
+    get_session(request)
+    
     return render(request, 'account.html', navbar_context)
 
 def cart_view(request):
+    get_session(request)
     context = {}
-    return render(request, 'cart.html', navbar_context)
+    qset = Product.objects.none()
+    
+    if 'user' in list(request.session.keys()):
+        user_email = dict(request.session.items())['user']
+        user_obj = User.objects.filter(email=user_email)[0]
+
+        if not hasattr(user_obj, 'cart'):
+            Cart.objects.create(user=user_obj)
+        
+        cart = Cart.objects.filter(user=user_obj)[0].cart.split()
+
+        tax = 20.00
+        quantity = {}
+        total = 0.00
+
+        for i, pid in enumerate(cart):
+            
+            if pid in quantity.keys():
+                quantity[pid] += 1
+            else:
+                quantity[pid] = 1
+
+            qset |= Product.objects.filter(id=int(pid))
+            total += float(str(Product.objects.filter(id=int(pid))[0].price))
+
+
+    context = {"qset":qset,"quantity":list(quantity.values()),"total":total, "qtotal":len(cart)}
+
+    context.update(navbar_context)
+
+    return render(request, 'cart.html', context)

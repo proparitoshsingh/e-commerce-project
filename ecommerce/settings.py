@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 # for heroku
-import django_heroku
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -32,7 +31,7 @@ SECRET_KEY = '1^@*&buse*rc&$ln_-%qv=1(+&_jd-%mz31^_(($&()75a)hde'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['www.vitstore.herokuapp.com', 'localhost', 'http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Media files
 MEDIA_URL = '/media/'
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     'accounts',
     'products',
     'orders',
+
 ]
 
 MIDDLEWARE = [
@@ -152,12 +152,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# added for heroku
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())

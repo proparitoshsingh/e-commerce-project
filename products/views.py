@@ -1,14 +1,16 @@
 from django.db import models
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from pages.views import navbar_context
+from pages.views import navbar_context, get_session
 from .models import Product
-import operator
 import re
 from accounts.models import User, Cart
+from django.core import serializers
 
 # Create your views here.
 def products_view(request):
+    get_session(request)
+
     page_no = 1
     max_ = 13 * page_no
     all_products = Product.objects.all()
@@ -18,11 +20,9 @@ def products_view(request):
         
 
         sort = request.POST.get('sort')
-        print(sort)
         if sort == 'default':
             page_products = all_products.order_by("id")
         elif sort == 'price':
-            print("ok")
             page_products = all_products.order_by("price")
         elif sort == '!price':
             page_products = all_products.order_by("-price")
@@ -42,6 +42,8 @@ def products_view(request):
     return render(request, "products.html", context)
 
 def product_details(request):
+    get_session(request)
+
     no_of_prod = len(Product.objects.all())
     full_path = str(request.get_full_path())
     pid = int(re.search('[0-9]+$', full_path).group(0))
@@ -61,13 +63,19 @@ def product_details(request):
     if request.method == "POST" and 'user' in list(request.session.keys()):
         user_email = dict(request.session.items())['user']
         user_obj = User.objects.filter(email=user_email)[0]
+        quantity = int(request.POST.get('quantity'))
         
         if not hasattr(user_obj, 'cart'):
             Cart.objects.create(user=user_obj)
+
+        user_cart = Cart.objects.filter(user=user_obj)[0]
+        
+        if quantity > 1:
+            for i in range(quantity):
+                user_cart.cart += f"{str(pid)} "
         else:
-            user_obj.cart.add_to_cart(Product.objects.filter(id=pid))
-            print(user_obj.cart.cart_field)
-            print(user_obj.cart.cart)
-            user_obj.cart.save()
+            user_cart.cart += f"{str(pid)} "
+        
+        user_cart.save()
 
     return render(request, "productdetails.html", context)

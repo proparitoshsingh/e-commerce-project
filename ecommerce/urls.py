@@ -20,6 +20,7 @@ from django.urls import re_path
 from pages.views import home_view, about_view, contact_view, get_session
 from accounts.views import auth_view, login, signup, logout, account_view, cart_view
 from products.views import products_view, product_details
+from orders.views import checkout, payment, thanks
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +35,7 @@ urlpatterns = [
     path('account/', account_view),
     re_path(r'^product/[0-9]', product_details),
     re_path(r'^cart/', cart_view),
-    re_path(r'.', get_session),
+    re_path(r'^checkout/', checkout),
+    re_path(r'^payment/', payment),
+    re_path(r'^thank-you-page/', thanks),
    ]

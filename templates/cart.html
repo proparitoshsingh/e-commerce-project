@@ -22,8 +22,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 
 
-
-
 <body>
 
 
@@ -36,13 +34,54 @@
 
     <div class="small-container cart-page">
 
-        <table>
+        <table style="width: 100%;">
             <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
+                <th style="text-align: left;">Product</th>
+                <th style="text-align: left;">Quantity</th>
+                <th style="text-align: left;">Subtotal</th>
             </tr>
+            <tr><td><hr style="width: 200%; margin-top: 15px; margin-bottom: 15px;"></td></tr>
+            {% load accounts_tags %}
+            {% for model in qset %}
             <tr>
+                <td>
+                    <div class="cart-info">
+                        {% load static %}
+                        <img src="{% static model.img %}" style="height: 15em;">
+                        <div>
+                            <p>{{model.name}}</p>
+                            <small>Price: ${{model.price}}</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+
+                    </div>
+                </td>
+                {% with quantity|list_item:forloop.counter0 as amt %}
+                <td><input type="number" value={{amt}} readonly="true"></td>
+                <td>${% mul model.price amt %}</td>
+                {% endwith %}
+            {% endfor %}
+            <tr><td><hr style="width: 200%; margin-top: 15px; margin-bottom: 15px;"></td></tr>
+            <div class="total-price">
+                <tr>
+                    <td>
+                        <b>Total:</b>
+                    </td>
+                    
+                    <td>
+                        <b>{{qtotal}}</b>
+                    </td>
+
+                    <td>
+                        <b>${{total}}</b>
+                    </td>
+                </tr>
+            </div>
+            <form action="/checkout/" method="POST"> {% csrf_token %}
+                <button type="submit" name="sbmt-btn" value={{total}}>Checkout</button>
+            </form>
+            <!--<tr>
                 <td>
                     <div class="cart-info">
                         {% load static %}
@@ -56,7 +95,7 @@
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
+                <td><input type="number" value="1" readonly></td>
                 <td>$50.00</td>
             </tr>
             <tr>
@@ -73,7 +112,7 @@
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
+                <td><input type="number" value="1" readonly></td>
                 <td>$50.00</td>
             </tr>
             <tr>
@@ -90,27 +129,12 @@
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
+                <td><input type="number" value="1" readonly></td>
                 <td>$50.00</td>
-            </tr>
+            </tr>-->
         </table>
 
-        <div class="total-price">
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$200</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>$35</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$230</td>
-                </tr>
-            </table>
-        </div>
+        
     </div>
 
     <!-- --footer-- -->
