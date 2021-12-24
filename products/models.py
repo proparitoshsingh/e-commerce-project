@@ -10,10 +10,6 @@ class Product(models.Model):
     name = models.CharField(default="Product", max_length=128, blank=False, null=False)
     desc = models.TextField(default="No Description", blank=False)
     price = models.DecimalField(default=0.0, max_digits=5, decimal_places=2, blank=False, null=False)
-    rating = models.IntegerField(blank=True, validators=[
-            MaxValueValidator(5),
-            MinValueValidator(1)
-        ])
 
     def __str__(self):
         return self.name

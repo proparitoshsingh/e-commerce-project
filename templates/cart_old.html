@@ -8,22 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - E commerce Website</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'STYLE.CSS' %}">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'cart-style.css' %}">
+    <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
 
 </head>
 {% load static %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 {% load static %}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{% load static %}
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 {% load static %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-
-
 
 
 <body>
@@ -44,7 +38,6 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
-
             {% load accounts_tags %}
             {% for model in qset %}
             <tr>
@@ -54,22 +47,18 @@
                         <img src="{% static model.img %}">
                         <div>
                             <p>{{model.name}}</p>
-                            <small>Price: ₹{{model.price}}</small>
+                            <small>Price: ${{model.price}}</small>
                             <br>
-                            <form action="" method="post"> {% csrf_token %}
-                                <a onclick="this.parentNode.submit();">Remove</a>
-                                <input type="number" name="delete" value="{{model.id}}" hidden>
-                            </form>
+                            <a href="">Remove</a>
                         </div>
 
                     </div>
                 </td>
                 {% with quantity|list_item:forloop.counter0 as amt %}
-                <td><p>{{amt}}</p></td>
-                <td>₹{% mul model.price amt %}</td>
+                <td><input type="number" value={{amt}} readonly="true"></td>
+                <td>${% mul model.price amt %}</td>
                 {% endwith %}
             {% endfor %}
-
             <div class="total-price">
                 <tr>
                     <td>
@@ -79,91 +68,78 @@
                     <td>
                         <b>{{qtotal}}</b>
                     </td>
-    
+
                     <td>
-                        <b>₹{{total}}</b>
+                        <b>${{total}}</b>
                     </td>
                 </tr>
-                
             </div>
-
+            <form action="/checkout/" method="POST"> {% csrf_token %}
+                <button class="checkout-btn" type="submit" name="sbmt-btn" value={{total}}>Checkout</button>
+            </form>
             <!--<tr>
                 <td>
                     <div class="cart-info">
-                        <img src="RedStore_Img/images/buy-1.jpg">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-1.jpg" %}">
                         <div>
                             <p>Printed T-shirt</p>
-                            <small>Price: ₹50.00</small>
+                            <small>Price: $50.00</small>
                             <br>
                             <a href="">Remove</a>
                         </div>
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>₹50.00</td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
             </tr>
             <tr>
                 <td>
                     <div class="cart-info">
-                        <img src="RedStore_Img/images/buy-2.jpg">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-2.jpg" %}">
                         <div>
                             <p>Printed T-shirt</p>
-                            <small>Price: ₹70.00</small>
+                            <small>Price: $70.00</small>
                             <br>
                             <a href="">Remove</a>
                         </div>
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>₹50.00</td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
             </tr>
             <tr>
                 <td>
                     <div class="cart-info">
-                        <img src="RedStore_Img/images/buy-3.jpg">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-3.jpg" %}">
                         <div>
                             <p>Printed T-shirt</p>
-                            <small>Price: ₹60.00</small>
+                            <small>Price: $60.00</small>
                             <br>
                             <a href="">Remove</a>
                         </div>
 
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
-                <td>₹50.00</td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
             </tr>-->
         </table>
+
         
-            <!--<table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>₹200</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>₹35</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>₹230</td>
-                </tr>
-            </table>-->
-        {% if total != 0 %}
-        <form action="/checkout/" method="POST" style="width: 100%; max-width: 1080px;"> {% csrf_token %}
-            <button id="checkout-btn" type="submit" name="sbmt-btn" value={{total}}>Checkout</button>
-        </form>
-        {% endif %}
     </div>
 
     <!-- --footer-- -->
 
+    
     {% include 'footer.html' %}
 
     <!-- --js for toggle menu-- -->
-    {% load static %}
+
     <script>
         var MenuItems = document.getElementById("MenuItems")
 
@@ -176,6 +152,8 @@
                 MenuItems.style.maxHeight = "0px";
             }
         }
+
+        
     </script>
 
 

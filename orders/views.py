@@ -17,7 +17,7 @@ def checkout(request):
         ship_fee = 5.43
         total = round(order_total - discount + tax + ship_fee, 2)
     
-    context = {"order_total":order_total, "disc":discount, "tax":tax, "ship":ship_fee, "total":total, "per":[disc_per, tax_per]}
+        context = {"order_total":order_total, "disc":discount, "tax":tax, "ship":ship_fee, "total":total, "per":[disc_per, tax_per]}
     
     return render(request, 'checkout.html', context)
 

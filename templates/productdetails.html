@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products - E commerce Website</title>
     {% load static %}
-    <link rel="stylesheet" href={% static "STYLE.CSS" %}>
+    <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
 
 </head>
 {% load static %}
@@ -18,7 +18,7 @@
 {% load static %}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 {% load static %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+<script src="https://kit.fontawesome.com/75c5922cab.js" crossorigin="anonymous"></script>
 
 
 
@@ -39,34 +39,11 @@
                 {% load static %}
                 <img src="{% static p1.img %}" width="100%" id="ProductImg">
 
-
-                <div class="small-img-row">
-                    <div class="small-img-col">
-                        {% load static %}
-                        <img src="{% static "RedStore_Img/images/gallery-1.jpg" %}" width="100%" class="small-img">
-
-                    </div>
-                    <div class="small-img-col">
-                        {% load static %}
-                        <img src="{% static "RedStore_Img/images/gallery-2.jpg" %}" width="100%" class="small-img">
-
-                    </div>
-                    <div class="small-img-col">
-                        {% load static %}
-                        <img src="{% static "RedStore_Img/images/gallery-3.jpg" %}" width="100%" class="small-img">
-
-                    </div>
-                    <div class="small-img-col">
-                        {% load static %}
-                        <img src="{% static "RedStore_Img/images/gallery-4.jpg" %}" width="100%" class="small-img">
-
-                    </div>
-                </div>
             </div>
             <div class="col-2">
                 <p>Home / {{p1.name}}</p>
                 <h1>{{p1.name}}</h1>
-                <h4>${{p1.price}}</h4>
+                <h4>₹{{p1.price}}</h4>
                 <select>
                     <option>Select Size</option>
                     <option>XXL</option>
@@ -92,7 +69,7 @@
 <div class="small-container">
     <div class="row row-2">
         <h2>Related Products</h2>
-        <p>View More</p>
+        <a href="/products">View More</a>
     </div>
 </div>
 
@@ -108,7 +85,7 @@
                     <h4>{{p2.name}}</h4>
                     <div class="rating">
                     </div>
-                    <p>${{p2.price}}</p>
+                    <p>₹{{p2.price}}</p>
                 </a>
             </div>
 
@@ -119,7 +96,7 @@
                     <h4>{{p3.name}}</h4>
                     <div class="rating">
                     </div>
-                    <p>${{p3.price}}</p>
+                    <p>₹{{p3.price}}</p>
                 </a>
             </div>
             <div class="col-4">
@@ -129,7 +106,7 @@
                     <h4>{{p4.name}}</h4>
                     <div class="rating">
                     </div>
-                    <p>${{p4.price}}</p>
+                    <p>₹{{p4.price}}</p>
                 </a>
             </div>
             <div class="col-4">
@@ -139,7 +116,7 @@
                     <h4>{{p5.name}}</h4>
                     <div class="rating">
                     </div>
-                    <p>${{p5.price}}</p>
+                    <p>₹{{p5.price}}</p>
                 </a>
             </div>
 

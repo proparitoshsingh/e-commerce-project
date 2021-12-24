@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from pages.views import navbar_context, home_view, get_session
 from products.models import Product
+from itertools import groupby
 
 # Create your views here.
 from .models import User, Cart
@@ -12,7 +13,7 @@ from .models import User, Cart
 def auth_view(request):
     get_session(request)
     
-    return render(request, 'registration.html', navbar_context)
+    return render(request, 'reg.html', navbar_context)
 
 
 def signup(request):
@@ -29,7 +30,7 @@ def signup(request):
             obj.save()
             return redirect(auth_view)
     else:
-        return render(request, 'registration.html', navbar_context)
+        return render(request, 'reg.html', navbar_context)
 
 
 def login(request):
@@ -52,7 +53,7 @@ def login(request):
         else:
             return HttpResponse('Please enter valid Username or Password.')
 
-    return render(request, 'registration.html')
+    return render(request, 'reg.html')
 
 def logout(request):
     get_session(request)
@@ -66,16 +67,14 @@ def logout(request):
     
     return redirect(auth_view)
 
-def account_view(request):
-    get_session(request)
-    
-    return render(request, 'account.html', navbar_context)
 
 def cart_view(request):
     get_session(request)
+
+
     context = {}
     qset = Product.objects.none()
-    
+
     if 'user' in list(request.session.keys()):
         user_email = dict(request.session.items())['user']
         user_obj = User.objects.filter(email=user_email)[0]
@@ -85,12 +84,16 @@ def cart_view(request):
         
         cart = Cart.objects.filter(user=user_obj)[0].cart.split()
 
-        tax = 20.00
+        if request.method == 'POST' and request.POST.get("delete"):
+            cart.remove(request.POST.get("delete"))
+            user_obj.cart.cart = ' '.join(cart) + " "
+            user_obj.cart.save()
+
         quantity = {}
         total = 0.00
 
         for i, pid in enumerate(cart):
-            
+            #print(i, pid)
             if pid in quantity.keys():
                 quantity[pid] += 1
             else:

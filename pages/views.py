@@ -7,10 +7,6 @@ def home_view(request):
 	get_session(request)
 	return render(request, "index.html", navbar_context)
 
-def about_view(request):
-	get_session(request)
-	return render(request, "about.html", navbar_context)
-
 def contact_view(request):
 	get_session(request)
 	return render(request, "contact.html", navbar_context)
